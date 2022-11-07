@@ -1,0 +1,170 @@
+/*
+===============
+Google font
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Great+Vibes&family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@200;400;600;700&family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+  --main-clr: #5072a7;
+  --sub-clr: #86a6de;
+  --sub-clr2: #e0f1ff;
+  --white-clr: #ffffff;
+  --white-clr2: #faf9f6;
+  --gray-clr: #a4abbd;
+  --font-clr: #404756;
+}
+
+/*
+===============
+Global Variable
+===============
+*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+p,
+label,
+a,
+::placeholder {
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+===============
+Login Form
+===============
+*/
+/* 모바일 && 큰화면 모두 적용 */
+.login-box {
+  background: var(--white-clr2);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 90%;
+}
+
+/*header*/
+.header {
+  text-align: center;
+  padding: 1rem 0;
+}
+.header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+.header p {
+  color: var(--font-clr);
+}
+
+/*login-form*/
+.login-form {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+label,
+.sub-box {
+  margin-top: 0.5rem;
+}
+input {
+  padding: 0.2rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1.2px solid var(--gray-clr);
+}
+
+.sub-box {
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sub-box div {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.sub-box span {
+  margin-left: 0.4rem;
+}
+.help-link {
+  color: var(--main-clr);
+}
+
+.submit-btn {
+  background: var(--main-clr);
+  color: var(--white-clr);
+  text-transform: capitalize;
+  border-radius: 5px;
+  border: transparent;
+  padding: 1rem;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  margin: 1rem 0;
+}
+.sign-up {
+  display: flex;
+  align-items: center;
+}
+.sign-up p {
+  color: var(--font-clr);
+  margin-right: 5px;
+}
+.img-box {
+  display: none;
+  transition: all 1.5s;
+  background: url(./img/blob1.svg) center/cover no-repeat;
+}
+
+/* pop up */
+
+.pop-up {
+}
+.open {
+}
+
+@media screen and (min-width: 768px) {
+  /* 768이상일떄 적용, 즉 모바일 사이즈 아님 */
+  main {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+  .container {
+    width: 60%;
+  }
+  .header {
+    text-align: left;
+  }
+
+  .img-box {
+    display: block;
+  }
+}

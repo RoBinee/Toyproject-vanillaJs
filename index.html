@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login Page</title>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/7b4bb4f271.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <article class="login-box">
+        <div class="container">
+          <header class="header">
+            <h1>welcome!</h1>
+            <p>please enter your details</p>
+          </header>
+          <form class="login-form">
+            <label for="email">email</label>
+            <input
+              type="text"
+              name="email"
+              placeholder="enter your email"
+              autocomplete="off"
+            />
+            <label for="password">password</label>
+            <input type="password" name="password" />
+            <div class="sub-box">
+              <div>
+                <input type="checkbox" class="check-box">
+               <span>remember me</span>
+              </div>
+                <a href="#" class="help-link">forgot password</a>
+            </div>
+            <button class="submit-btn">sign in</button>
+            <div class="sign-up">
+                <p>don't have an account?</p>
+                <a href="#" class="help-link sign-up">sign up</a>
+            </div>
+          </form>
+      </article>
+      <article class="img-box">
+        <!-- <img src="./img/blob1.svg" class="back-img" alt=""> -->
+      </article>
+    </main>
+    <!-- pop up -->
+    <section class="pop-up">
+
+    </section>
+    <!-- js -->
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
