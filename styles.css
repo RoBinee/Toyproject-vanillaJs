@@ -14,6 +14,7 @@ Google font
   --white-clr2: #faf9f6;
   --gray-clr: #a4abbd;
   --font-clr: #404756;
+  --red-clr: #cc3333;
 }
 
 /*
@@ -79,8 +80,12 @@ Login Form
   margin-bottom: 0.5rem;
   font-size: 2rem;
 }
-.header p {
+.message {
   color: var(--font-clr);
+}
+.error {
+  /* 로그인 실패시 textContent 바꾸고 class이거 붙이기 */
+  color: var(--red-clr);
 }
 
 /*login-form*/
@@ -138,17 +143,94 @@ input {
   color: var(--font-clr);
   margin-right: 5px;
 }
+.help-btn {
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: var(--main-clr);
+  background: transparent;
+}
 .img-box {
   display: none;
   transition: all 1.5s;
-  background: url(./img/blob1.svg) center/cover no-repeat;
+  /* background: url(./img/blob1.svg) center/cover no-repeat; */
+}
+.image {
+  transition: all 1.5s;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* pop up */
 
-.pop-up {
+.modal {
+  /* 모달창 안보임 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(50, 50, 50, 0.7);
+  /* display: none; */
+  visibility: hidden;
+  display: grid;
+  place-items: center;
 }
-.open {
+.open-modal {
+  /* 모달창 보여주기 */
+  /* display: block; */
+  visibility: visible;
+}
+
+.modal-container {
+  background: var(--white-clr);
+  width: 90%;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.modal-container h1 {
+  margin-bottom: 0.5rem;
+}
+
+.new-account-form input {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem 0.5rem;
+}
+.btn-container {
+  /* border: 1px solid black; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cancel-btn,
+.create-btn {
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  border: transparent;
+  border-radius: 5px;
+}
+.cancel-btn {
+  background: var(--white-clr);
+  color: var(--gray-clr);
+}
+.cancel-btn:active {
+  background: var(--white-clr2);
+  color: var(--font-clr);
+}
+
+.create-btn {
+  background: var(--main-clr);
+  color: var(--white-clr);
+}
+.create-btn:active {
+  background: var(--sub-clr);
 }
 
 @media screen and (min-width: 768px) {
@@ -166,5 +248,8 @@ input {
 
   .img-box {
     display: block;
+  }
+  .modal-container {
+    width: 30%;
   }
 }

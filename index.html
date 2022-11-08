@@ -19,7 +19,7 @@
         <div class="container">
           <header class="header">
             <h1>welcome!</h1>
-            <p>please enter your details</p>
+            <p class="message">please enter your details</p>
           </header>
           <form class="login-form">
             <label for="email">email</label>
@@ -28,9 +28,10 @@
               name="email"
               placeholder="enter your email"
               autocomplete="off"
+              class="email"
             />
             <label for="password">password</label>
-            <input type="password" name="password" />
+            <input type="password" name="password" class="password" />
             <div class="sub-box">
               <div>
                 <input type="checkbox" class="check-box">
@@ -41,17 +42,29 @@
             <button class="submit-btn">sign in</button>
             <div class="sign-up">
                 <p>don't have an account?</p>
-                <a href="#" class="help-link sign-up">sign up</a>
+                <button type="button" class="help-btn">sign up</button>
             </div>
           </form>
       </article>
       <article class="img-box">
-        <!-- <img src="./img/blob1.svg" class="back-img" alt=""> -->
+        <img src="" class="image" alt="">
       </article>
     </main>
     <!-- pop up -->
-    <section class="pop-up">
-
+    <section class="modal">
+      <div class="modal-container">
+        <h1>create an account!</h1>
+        <form action="submit" class="new-account-form">
+          <input type="text" name="email" placeholder="email address"
+          autocomplete="off"
+          class="email">
+          <input type="password" name="password" placeholder="password" class="password">
+          <div class="btn-container">
+            <button type="button" class="cancel-btn">cancel</button>
+            <button  class="create-btn">create</button>
+          </div>
+        </form>
+      </div>
     </section>
     <!-- js -->
     <script type="module" src="./app.js"></script>

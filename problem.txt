@@ -1,0 +1,10 @@
+1. 오른쪽 사진을 display할때 어려움이 있었음
+height 100%을 지정하자 scroll bar 발생
+
+대안:
+1
+
+
+Add display: block to <img>.
+
+By default, <img> has display: inline as default display style. And inline and inline-block display style will apply a blank space between elements.
