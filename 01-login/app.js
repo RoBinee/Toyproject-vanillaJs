@@ -1,7 +1,7 @@
 import images from "./imgData.js";
 
-//1.회원 가입
-//1-1 회원가입 창 띄우기
+//1. sign up
+//1-1 show the sign up modal
 const helpBtn = document.querySelector(".help-btn");
 const modal = document.querySelector(".modal");
 const cancelBtn = document.querySelector(".cancel-btn");
@@ -14,16 +14,15 @@ cancelBtn.addEventListener("click", () => {
   modal.classList.remove("open-modal");
 });
 
-//1-2 회원가입 시키기 -> localstorage에 저장하기
+//1-2 sign up
 const signUpForm = document.querySelector(".new-account-form");
-//함수안에 넣장...
 
 signUpForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const emailInput = signUpForm.querySelector(".email");
   const passwordInput = signUpForm.querySelector(".password");
-  let oldData = getData(); //저장된 데이터를 불러온다
+  let oldData = getData(); //get data from localstorage
   oldData.push({
     email: `${emailInput.value}`,
     password: `${passwordInput.value}`,
@@ -36,12 +35,6 @@ signUpForm.addEventListener("submit", (e) => {
 
   modal.classList.remove("open-modal");
 });
-
-/*
-=========
-localstorage start
-=========
-*/
 
 function getData() {
   //account? member?
@@ -56,13 +49,7 @@ function saveData(arr) {
   localStorage.setItem("account", JSON.stringify(arr));
 }
 
-/*
-=========
-localstorage end
-=========
-*/
-
-//2.로그인하기
+//2.login in
 
 const loginForm = document.querySelector(".login-form");
 const message = document.querySelector(".message");
@@ -77,21 +64,19 @@ loginForm.addEventListener("submit", (e) => {
   const userEmail = emailInput.value;
   const userPassword = passwordInput.value;
 
-  const flag = oldData.find((item) => {
+  const errorFlag = oldData.find((item) => {
     const { email, password } = item;
     if (email == userEmail && password == userPassword) {
       return item;
     }
   });
-  console.log(flag);
-  if (flag) {
+  console.log(errorFlag);
+  if (errorFlag) {
     //user exist
     //alarm..
     alert("Login Success!");
-  } else if (!flag) {
+  } else if (!errorFlag) {
     //wrong id or password
-    //밑 두개를 일시적으로만 해야함
-
     message.classList.add("error");
     message.textContent = "Error! Please write down again";
 
@@ -105,7 +90,7 @@ loginForm.addEventListener("submit", (e) => {
   passwordInput.value = "";
 });
 
-//3. 이미지 클릭 -> 이미지 바꾸기
+//3. click -> change the img
 const imgContainer = document.querySelector(".img-box");
 const image = document.querySelector(".image");
 let i = 1;
