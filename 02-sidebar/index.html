@@ -15,7 +15,7 @@
   </head>
   <body>
     <main>
-      <h1>hi</h1>
+      <h1>sidebar</h1>
     </main>
     <!-- sidebar -->
     <aside class="sidebar">
@@ -23,63 +23,73 @@
         <button class="toggle">
           <i class="fa-regular fa-circle-user"></i>
         </button>
-        <div class="content">
+        <div class="links-container">
+          <!-- links-container를 넣은 이유는 js에서 여기에 data 넣을려고 -->
           <!-- single category -->
-          <article class="single-category">
+          <!-- <article class="single-category">
             <h4>analtytics</h4>
             <div class="sidebar-sublink">
               <a href="#">
                 <i class="fa-solid fa-table-columns"></i>
-                dashboard
+                <span class="label"> dashboard </span>
               </a>
               <a href="#">
                 <i class="fa-solid fa-chart-pie"></i>
-                perfomance
+                <span class="label"> perfomance </span>
               </a>
             </div>
-          </article>
+          </article> -->
           <!-- end of single category -->
           <!-- single category -->
-          <article class="single-category">
+          <!-- <article class="single-category">
             <h4>content</h4>
             <div class="sidebar-sublink">
               <a href="#">
                 <i class="fa-regular fa-file-lines"></i>
-                guides
+                <span class="label"> guides </span>
               </a>
               <a href="#">
                 <i class="fa-solid fa-circle-notch"></i>
-                hotspots
+                <span class="label"> hotspots </span>
               </a>
               <a href="#">
                 <i class="fa-regular fa-circle-check"></i>
-                checklists
+                <span class="label"> checklists </span>
               </a>
               <a href="#">
                 <i class="fa-regular fa-thumbs-up"></i>
-                nps
+                <span class="label"> nps </span>
               </a>
             </div>
-          </article>
+          </article> -->
           <!-- end of single category -->
           <!-- single category -->
-          <article class="single-category">
+          <!-- <article class="single-category">
             <h4>customization</h4>
             <div class="sidebar-sublink">
               <a href="#">
                 <i class="fa-regular fa-clone"></i>
-                segments
+                <span class="label"> segments </span>
               </a>
               <a href="#">
                 <i class="fa-regular fa-pen-to-square"></i>
-                themes
+                <span class="label"> themes </span>
               </a>
             </div>
-          </article>
+          </article> -->
           <!-- end of single category -->
         </div>
       </div>
     </aside>
+    <button class="switch-btn">
+      <span>
+        <i class="fa-solid fa-sun"></i>
+      </span>
+      <span>
+        <i class="fa-solid fa-moon"></i>
+      </span>
+      <span class="switch"></span>
+    </button>
     <!-- js -->
     <script type="module" src="./app.js"></script>
   </body>

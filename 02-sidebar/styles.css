@@ -1,16 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?familyPoppins:wght@200;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&family=Roboto:wght@300;400;500&display=swap");
 
 :root {
-  --pure-white: #ffffff;
-  --white-clr: #fffdfa;
-  --white-clr2: #f8f9fa;
-  --red-clr: #e71809;
+  --sidebar-color: #fffdfa;
+  --primary-color: #e71809;
+  --active-color: #ff6540;
   --hover-clr: #ffe6d9;
-  --font-clr: #474747;
-  --font-clr2: #aca9bb;
-  --border-radius: 5px;
+  --btn-font-clr: #ffffff;
+  --link-clr: #474747;
+  --category-clr: #aca9bb;
+  --main-clr: #dddddd;
+  --border-radius: 10px;
   --box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
     rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.dark-mode {
+  --sidebar-color: #242526;
+  --primary-color: #e71809;
+  --active-color: #ccc;
+  --hover-clr: #3a3b3c;
+  --link-clr: #ccc;
+  --main-clr: #121212;
 }
 
 /*
@@ -33,11 +43,11 @@ h4,
 p,
 a {
   text-transform: capitalize;
-  color: var(--font-clr);
+  color: var(--link-clr);
   font-family: "Poppins", sans-serif;
 }
 h4 {
-  color: var(--font-clr2);
+  color: var(--category-clr);
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -51,31 +61,46 @@ a {
 
 /*sidebar*/
 body {
-  background: pink;
   position: relative;
-  display: flex;
+}
+main {
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+  min-width: 100%;
+  background: var(--main-clr);
 }
 
 .sidebar {
-  background: var(--white-clr);
+  transition: all 0.3s;
+  background: var(--sidebar-color);
   position: fixed;
-  width: 100%;
+  /* width: 13%; */
+  width: auto;
   height: 100vh;
   box-shadow: var(--box-shadow);
 }
 .container {
-  /* border: 1px solid black; */
   padding: 1.5rem;
+  position: absolute;
+  /* background: greenyellow; */
+  left: 0;
+  height: 100%;
+  /* display: block; */
 }
 .toggle {
-  background: var(--red-clr);
-  color: var(--pure-white);
-  font-size: 1.8rem;
-  width: 2.5rem;
+  background: var(--primary-color);
+  color: var(--btn-font-clr);
   border-radius: var(--border-radius);
+  font-size: 1.8rem;
+  padding: 0.3rem 0.5rem;
 }
-/* content */
-.content {
+.toggle:active {
+  background: var(--active-color);
+}
+/* links-container */
+.links-container {
   margin-top: 2rem;
 }
 
@@ -95,24 +120,74 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 1.2rem;
-  padding: 0.5rem 0;
+  font-size: 1rem;
+  padding: 0.5rem 0.5rem;
+  margin-top: 0.3rem;
   border-radius: var(--border-radius);
   transition: all 0.2s;
 }
 .sidebar-sublink a:hover {
   background: var(--hover-clr);
-  color: var(--red-clr);
+  color: var(--primary-color);
 }
-i {
-  margin-right: 1rem;
+.sidebar-sublink a i {
+  font-size: 1.3rem;
 }
-@media screen and (min-width: 768px) {
-  /* For big screen */
-  main {
-    margin-left: 20%;
-  }
-  .sidebar {
-    width: 15%;
-  }
+.label {
+  margin-left: 1rem;
 }
+/* dark mode btn */
+.switch-btn {
+  position: fixed;
+  right: 7%;
+  top: 7%;
+  width: 7rem;
+  height: 2rem;
+  background: var(--link-clr);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.switch-btn span {
+  font-size: 1.5rem;
+  color: var(--sidebar-color);
+}
+
+.switch {
+  background: var(--btn-font-clr);
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s;
+}
+.dark .switch {
+  right: 50%;
+}
+
+/* when we click the toggle to add classList "close" */
+.close {
+  /* border: 2px solid green; */
+  width: auto;
+  /* width: 7%; */
+}
+
+.close .label {
+  display: none;
+}
+.close h4 {
+  font-size: 0.7rem;
+}
+
+.close .single-category {
+  display: grid;
+  place-items: center;
+}
+
+/* @media screen and (min-width: 768px) {
+ 
+} */

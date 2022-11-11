@@ -44,13 +44,15 @@ const links = [
     ],
   },
   {
-    category: "customization",
+    category: "custom",
     links: [
       { label: "segments", icon: "fa-regular fa-clone" },
       { label: "themes", icon: "fa-regular fa-pen-to-square" },
     ],
   },
 ];
+
+export default links;
 
 //user
 //<i class="fa-regular fa-circle-user"></i>
