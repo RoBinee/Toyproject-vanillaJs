@@ -2,25 +2,27 @@ import data from "./data.js";
 
 const sidebar = document.querySelector(".sidebar");
 const toggleBtn = document.querySelector(".toggle");
-// let categories;
 
+/**Display data */
+const linksContainer = document.querySelector(".links-container");
+const switchBtn = document.querySelector(".switch-btn");
+
+/**EventListener */
 toggleBtn.addEventListener("click", () => {
   sidebar.classList.toggle("close");
-  //   if (sidebar.classList.contains("close")) {
-  //     // console.log(categories);
-  //     changeTitle();
-  //   }
-  changeWidth();
+  changePadding();
 });
 
-// 1. data 전시하기
-const linksContainer = document.querySelector(".links-container");
-
-// window.addEventListener("load", displayCategories);
 window.addEventListener("DOMContentLoaded", () => {
   displayCategories();
-  changeWidth();
+  changePadding();
 });
+switchBtn.addEventListener("click", () => {
+  switchBtn.classList.toggle("dark");
+  document.documentElement.classList.toggle("dark-mode");
+});
+
+/**function */
 
 function displayCategories() {
   //put data into linksContainer
@@ -47,24 +49,11 @@ function displayCategories() {
     .join("");
 }
 
-//close일때 아닐때 -> width 수정, 그에 따른 main left 수정
-
-function changeWidth() {
+function changePadding() {
   const container = document.querySelector(".container");
   const containerWidth = container.getBoundingClientRect().width;
-  // 2. getBounding이용해서 width 정하기
   sidebar.style.width = `${containerWidth}px`;
 
-  // 3. main width...어떻게할지
   const main = document.querySelector("main");
-  //   main.style.left = `${containerWidth}px`;
-  main.style.paddingLeft = `${containerWidth}px`;
-  //   main.style.width = `${100% - }px`
+  main.style.paddingLeft = `${containerWidth + 20}px`;
 }
-
-const switchBtn = document.querySelector(".switch-btn");
-
-switchBtn.addEventListener("click", () => {
-  switchBtn.classList.toggle("dark");
-  document.documentElement.classList.toggle("dark-mode");
-});

@@ -76,7 +76,6 @@ main {
   transition: all 0.3s;
   background: var(--sidebar-color);
   position: fixed;
-  /* width: 13%; */
   width: auto;
   height: 100vh;
   box-shadow: var(--box-shadow);
@@ -84,10 +83,8 @@ main {
 .container {
   padding: 1.5rem;
   position: absolute;
-  /* background: greenyellow; */
   left: 0;
   height: 100%;
-  /* display: block; */
 }
 .toggle {
   background: var(--primary-color);
@@ -106,11 +103,9 @@ main {
 
 /* single category css */
 .single-category {
-  /* border: 1px solid black; */
   margin: 1.8rem 0;
 }
 .sidebar-sublink {
-  /* border: 1px solid red; */
   display: grid;
   grid-template-rows: auto;
   align-items: center;
@@ -171,9 +166,7 @@ main {
 
 /* when we click the toggle to add classList "close" */
 .close {
-  /* border: 2px solid green; */
   width: auto;
-  /* width: 7%; */
 }
 
 .close .label {
