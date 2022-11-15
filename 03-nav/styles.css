@@ -2,10 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@300;400;500&display=swap");
 
 :root {
-  --background-clr: #faf8ff;
+  --background-clr: #dadde2;
+  --font-clr: #2e2e2e;
+  --font-clr2: #595959;
+  --nav-clr: #f6f6f6;
+  --hover-clr: #c6c0f8;
+  --pure-white: #ffffff;
+  --box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   --main-font: "Poppins", sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 *,
 ::before,
 ::after {
@@ -17,6 +26,7 @@
 body {
   font-family: var(--main-font);
   text-transform: capitalize;
+  color: var(--font-clr);
 }
 
 ul {
@@ -29,23 +39,96 @@ a {
 /* hero */
 header {
   position: relative;
-  background: var(--gray-clr);
+  background: var(--background-clr);
   width: 100%;
   height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.container {
+  /* border: 1px solid black; */
+  text-align: center;
 }
 
-/* nav */
-.nav {
-  background: pink;
+.container h1 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+}
+.container p {
+  font-size: 1.3rem;
+  color: var(--font-clr2);
+}
+/* navbar*/
+.navbar {
+  /* border: 1px solid red; */
+  background: var(--nav-clr);
   width: 100%;
+  height: 10vh;
   position: absolute;
   bottom: 0;
-}
-
-.links {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: row;
 }
 .link {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-clr);
+  letter-spacing: 5px;
+  transition: all 0.3s;
+}
+.link:hover {
+  background-color: var(--hover-clr);
+}
+/* fixed navbar */
+.fixed {
+  position: fixed;
+  top: 0;
+}
+/* .links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   border: 1px solid black;
+  width: 100%;
+  height: 100%;
+}
+.link {
+  border: 1px solid tomato;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.link a {
+  border: 1px solid brown;
+  display: block;
+  width: 100%;
+  height: 100vh;
+} */
+
+/* section */
+.section {
+  height: 90vh;
+  /* background: yellowgreen; */
+  display: grid;
+  place-items: center;
+  /* border: 1px solid white; */
+}
+.paper {
+  width: 12%;
+  background: var(--pure-white);
+  padding: 0.5rem;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+
+.info h2 {
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+}
+.info .color-name {
+  font-size: 1rem;
+  font-weight: 400;
 }
