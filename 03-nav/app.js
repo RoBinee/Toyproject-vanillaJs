@@ -1,20 +1,33 @@
 import colors from "./colorData.js";
-//navbar -> add classList fixed
 
-//nav도 responsive하게, 색도 지정해야함
+// variables
+const navbar = document.querySelector(".navbar");
+const navPosition = navbar.offsetTop;
 
+//addEventListener
 window.addEventListener("DOMContentLoaded", () => {
   startUI();
 });
 
-//make responsive navbar
+window.addEventListener("scroll", () => {
+  const scrollHeight = window.pageYOffset;
+  //pageYOffset is used for scroll
 
+  if (scrollHeight >= navPosition) {
+    navbar.classList.add("fixed");
+  } else if (scrollHeight < navPosition) {
+    navbar.classList.remove("fixed");
+  }
+});
+
+//make responsive navbar
 function startUI() {
   insertYear();
   insertSection();
+  adjustPosition();
 }
 
-const navbar = document.querySelector(".navbar");
+//make responsive nav
 function insertYear() {
   const years = colors.reduce((total, color) => {
     if (!total.includes(color.year)) {
@@ -25,13 +38,12 @@ function insertYear() {
 
   navbar.innerHTML = years
     .map((year) => {
-      return `<a href="#${year}" class="link">${year}</a>`;
+      return `<a href="#${year}" class="link" >${year}</a>`;
     })
     .join("");
 }
 
 //make responsive section
-
 function insertSection() {
   const header = document.getElementById("home");
   const sections = colors
@@ -54,8 +66,6 @@ function insertSection() {
   setBackground();
 }
 
-//set background
-//id를 불러온다 -> style.background에 colorCode를 set한다
 function setBackground() {
   const sections = [...document.querySelectorAll(".section")];
 
@@ -73,18 +83,24 @@ function setBackground() {
   });
 }
 
-//scroll
-const navPosition = navbar.getBoundingClientRect().top;
+//control scroll
 
-window.addEventListener("scroll", () => {
-  const scrollHeight = window.pageYOffset;
-  //document 기준임
+function adjustPosition() {
+  const links = document.querySelectorAll(".link");
 
-  if (scrollHeight >= navPosition) {
-    navbar.classList.add("fixed");
-  } else if (scrollHeight < navPosition) {
-    navbar.classList.remove("fixed");
-  }
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const year = link.textContent;
+      const section = document.getElementById(year);
+      let position = section.offsetTop;
+      let navHeight = navbar.getBoundingClientRect().height;
+      //viewport가 기준이기 때문에 클릭할때마다 상대위치가 이상하게 바뀐다...
+      //getBounding대신 offsetTop으로 해결
 
-  ///why it works...?????
-});
+      position = position - navHeight;
+
+      window.scrollTo(0, position);
+    });
+  });
+}

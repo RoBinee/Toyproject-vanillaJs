@@ -9,11 +9,6 @@ const colors = [
     colorName: "Illuminating",
     colorCode: "#F5DF4D",
   },
-  //   {
-  //     year: "2021",
-  //     colorName: "Ultimate Gray",
-  //     colorCode: "#a1a4a6",
-  //   },
   {
     year: "2020",
     colorName: "Classic Blue",
