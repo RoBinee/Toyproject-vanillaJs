@@ -1,0 +1,20 @@
+/* 
+============
+Goggle font 
+============
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+  --background-clr: #f5f5f5;
+  --btn-clr: #d2d5db;
+  --active-btn-clr: #78828b;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  background: var(--background-clr);
+}
