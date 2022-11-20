@@ -103,7 +103,6 @@ main {
 }
 
 .slider {
-  border: 2px solid black;
   width: 60%;
   height: 65%;
   position: relative;
@@ -117,14 +116,16 @@ main {
 /* slide-container */
 .slide-container {
   position: relative;
-  background: pink;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
 .single-slide {
-  border: 2px solid red;
+  display: none;
+}
+.active {
+  display: block;
 }
 .single-slide img {
   width: 100%;
@@ -132,18 +133,27 @@ main {
   object-fit: cover;
 }
 .single-slide .title {
+  /* border: 1px solid black; */
   color: var(--white-clr);
   position: absolute;
   top: 0%;
-  right: 50%;
+  width: 100%;
+  text-align: center;
+  /* right: 50%; */
   font-size: 10rem;
   letter-spacing: 1rem;
+}
+
+.page {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  color: var(--white-clr);
 }
 /* single-slide active */
 
 /* dots-container */
 .dots-container {
-  border: 2px solid red;
   height: auto;
 }
 .dot {
@@ -151,7 +161,7 @@ main {
   height: 0.7rem;
   background: var(--btn-clr);
   display: inline-block;
-  border-radius: 1rem;
+  border-radius: 100%;
   cursor: pointer;
 }
 
@@ -163,7 +173,6 @@ main {
 } */
 /* btncontainer가 꼭 필요한가...? */
 .btn {
-  border: 1px solid black;
   font-size: 2rem;
   padding: 0.5rem;
 }
