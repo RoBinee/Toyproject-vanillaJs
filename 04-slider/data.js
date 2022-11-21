@@ -1,4 +1,4 @@
-const datas = [
+const slides = [
   {
     title: "spring",
     img: "https://cdn.pixabay.com/photo/2022/05/03/23/35/rapeseed-7172836_960_720.jpg",
@@ -19,4 +19,18 @@ const datas = [
     title: "christmas",
     img: "https://cdn.pixabay.com/photo/2021/12/26/19/36/christmas-tree-6895765_960_720.jpg",
   },
+  {
+    title: "cat",
+    img: "https://cdn.pixabay.com/photo/2022/10/21/08/39/cat-7536508_960_720.jpg",
+  },
+  {
+    title: "castle",
+    img: "https://cdn.pixabay.com/photo/2022/11/11/16/11/lion-cathedral-7585300_960_720.jpg",
+  },
+  {
+    title: "moon",
+    img: "https://cdn.pixabay.com/photo/2015/04/23/21/59/tree-736877_960_720.jpg",
+  },
 ];
+
+export default slides;
